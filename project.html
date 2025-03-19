@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #121212;
+            color: #fff;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Particle Background */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Navigation Bar */
+        .nav-container {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00eaff;
+        }
+
+        /* Mobile Nav Toggle */
+        .menu-icon {
+            display: none;
+            font-size: 26px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: rgba(0, 0, 0, 0.9);
+                position: absolute;
+                top: 60px;
+                right: 10px;
+                width: 200px;
+                padding: 15px;
+                border-radius: 10px;
+                text-align: left;
+            }
+
+            .nav-links a {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+
+        /* Hero Section */
+        header {
+            margin-top: 120px;
+            padding: 50px 10%;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 600;
+            text-shadow: 0 0 10px #00eaff;
+        }
+
+        p {
+            font-size: 18px;
+            color: #bbb;
+        }
+
+        /* Main Content Section */
+        .content-container {
+            padding: 80px 10%;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .glass-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 238, 255, 0.2);
+            transition: transform 0.3s;
+            margin-bottom: 30px;
+        }
+
+        .glass-box:hover {
+            transform: scale(1.02);
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: #00eaff;
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        footer p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+
+    <div class="nav-container">
+        <nav>
+            <a href="#" class="logo">Your Projects</a>
+            <div class="menu-icon" onclick="toggleNav()">☰</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="project.html">Projects</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </div>
+
+    <header>
+        <h1>My Projects</h1>
+        <p>Showcasing my best work in web development and management systems.</p>
+    </header>
+
+    <div class="content-container">
+        <div class="glass-box">
+            <h2 class="section-title">Funpixel Server Website</h2>
+            <p>A Hypixel-inspired Minecraft server website featuring a news section, player stats, and a forum.</p>
+        </div>
+
+        <div class="glass-box">
+            <h2 class="section-title">Secure Story Website</h2>
+            <p>A fully functional story-sharing platform with admin controls, verification features, and a user-friendly interface.</p>
+        </div>
+
+        <div class="glass-box">
+            <h2 class="section-title">Dimensional Rush Minigame</h2>
+            <p>A unique Minecraft minigame where players race through different dimensions to complete challenges.</p>
+        </div>
+
+        <div class="glass-box">
+            <h2 class="section-title">Project Management System</h2>
+            <p>A custom management system for tracking tasks, projects, and team collaboration with an intuitive UI.</p>
+        </div>
+
+        <div class="glass-box">
+            <h2 class="section-title">Modern Web Development Portfolio</h2>
+            <p>A sleek and modern portfolio website showcasing projects, skills, and contact details, optimized for performance.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 All Rights Reserved | Developed by Yoichi Isagi</p>
+    </footer>
+
+    <script>
+        /* Mobile Nav Toggle */
+        function toggleNav() {
+            const navLinks = document.querySelector(".nav-links");
+            navLinks.style.display = (navLinks.style.display === "flex") ? "none" : "flex";
+        }
+
+        /* Particles.js */
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 80 },
+                color: { value: "#00eaff" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5 },
+                size: { value: 3 },
+                move: { enable: true, speed: 2 },
+            },
+        });
+    </script>
+</body>
+</html>
