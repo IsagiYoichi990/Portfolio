@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Yoichi Isagi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #0d0d0d;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Enable scrolling while hiding the scrollbar */
+        .scroll-container {
+            width: 100%;
+            height: 100vh;
+            overflow-y: auto;
+            padding: 40px 0;
+            scroll-behavior: smooth;
+        }
+
+        /* Hide scrollbar */
+        .scroll-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scroll-container {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Particles Background */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Heading */
+        h1 {
+            font-size: 40px;
+            margin-bottom: 25px;
+            background: linear-gradient(90deg, #00d4ff, #ffcc00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+
+        /* Pricing Container */
+        .pricing-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            max-width: 1000px;
+            padding-bottom: 50px;
+        }
+
+        /* Pricing Card */
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            padding: 25px;
+            border-radius: 15px;
+            width: 270px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s, background 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 250%;
+            height: 250%;
+            background: linear-gradient(45deg, rgba(0, 212, 255, 0.2), rgba(255, 204, 0, 0.2));
+            transform: rotate(25deg);
+            transition: all 0.5s ease-in-out;
+            opacity: 0;
+        }
+
+        .card:hover::before {
+            top: 0;
+            left: 0;
+            opacity: 1;
+        }
+
+        .card:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .card h2 {
+            font-size: 26px;
+            color: #00d4ff;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            font-size: 17px;
+            color: #ddd;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 22px;
+            font-weight: bold;
+            background: linear-gradient(90deg, #ffcc00, #ff6600);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Home Button */
+        .btn {
+            margin-top: 35px;
+            padding: 14px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            color: black;
+            background: #00d4ff;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background 0.3s ease-in-out, transform 0.3s;
+        }
+
+        .btn:hover {
+            background: #009ecb;
+            transform: scale(1.1);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Particles.js Background -->
+    <div id="particles-js"></div>
+
+    <!-- Scrollable Container -->
+    <div class="scroll-container">
+        <h1>🔥 Premium Pricing Plans 🔥</h1>
+
+        <div class="pricing-container">
+            <div class="card">
+                <h2>Basic Website</h2>
+                <p>Simple 1-page website.</p>
+                <span class="price">1x Discord Nitro</span>
+            </div>
+
+            <div class="card">
+                <h2>Full Website</h2>
+                <p>Up to 5 pages with full setup.</p>
+                <span class="price">1x Minecraft Premium Account</span>
+            </div>
+
+            <div class="card">
+                <h2>Custom Bot</h2>
+                <p>Discord bot with advanced features.</p>
+                <span class="price">1x $10 Gift Card</span>
+            </div>
+
+            <div class="card">
+                <h2>Minecraft Server Setup</h2>
+                <p>Complete server with plugins & configs.</p>
+                <span class="price">1x $25 Gift Card</span>
+            </div>
+
+            <div class="card">
+                <h2>Premium Website</h2>
+                <p>Animated, interactive design.</p>
+                <span class="price">2x Discord Nitro</span>
+            </div>
+
+            <div class="card">
+                <h2>Exclusive VIP Package</h2>
+                <p>Website, bot & server setup.</p>
+                <span class="price">3x Discord Nitro</span>
+            </div>
+        </div>
+
+        <!-- Home Button -->
+        <a href="index.html" class="btn">🏠 Home</a>
+    </div>
+
+    <!-- Particles.js Config -->
+    <script>
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 100 },
+                size: { value: 4 },
+                move: { speed: 2 },
+                color: { value: "#00d4ff" },
+                line_linked: { enable: true, distance: 120, color: "#00d4ff" }
+            }
+        });
+    </script>
+
+</body> 
+</html>
